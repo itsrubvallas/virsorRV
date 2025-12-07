@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Espacio Virtual con Osito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- A-Frame actualizado -->
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+
+      <!-- ========================= -->
+      <!--        ASSETS             -->
+      <!-- ========================= -->
+      <a-assets>
+        <a-asset-item
+          id="ositoModel"
+          src="osito.glb">
+        </a-asset-item>
+      </a-assets>
+
+      <!-- ========================= -->
+      <!--        CÁMARA             -->
+      <!-- ========================= -->
+      <a-entity position="0 1.6 6">
+        <a-camera
+          wasd-controls-enabled="true"
+          look-controls="true">
+        </a-camera>
+      </a-entity>
+
+      <!-- ========================= -->
+      <!--    MODELO PRINCIPAL       -->
+      <!-- ========================= -->
+      <!-- Osito viendo al frente -->
+      <a-entity
+        gltf-model="#ositoModel"
+        position="0 0 -8"
+        rotation="0 0 0"
+        scale="0.6 0.6 0.6">
+      </a-entity>
+
+      <!-- ========================= -->
+      <!--    FIGURAS BÁSICAS        -->
+      <!-- ========================= -->
+
+      <!-- Caja -->
+      <a-box
+        position="-5 0.4 -11"
+        width="0.7"
+        height="0.7"
+        depth="0.7"
+        rotation="0 25 0"
+        color="#4CC3D9">
+      </a-box>
+
+      <!-- Esfera -->
+      <a-sphere
+        position="5 2 -12"
+        radius="0.8"
+        color="#EF2D5E">
+      </a-sphere>
+
+      <!-- Cilindro -->
+      <a-cylinder
+        position="6 0.6 -10"
+        radius="0.35"
+        height="1.1"
+        color="#FFC65D">
+      </a-cylinder>
+
+      <!-- ========================= -->
+      <!--          PISO             -->
+      <!-- ========================= -->
+      <a-plane
+        position="0 0 -8"
+        rotation="-90 0 0"
+        width="22"
+        height="22"
+        color="#7BC8A4">
+      </a-plane>
+
+      <!-- ========================= -->
+      <!--          CIELO            -->
+      <!-- ========================= -->
+      <a-sky color="#ECECEC"></a-sky>
+
+      <!-- ========================= -->
+      <!--          LUCES            -->
+      <!-- ========================= -->
+      <a-entity light="type: ambient; intensity: 0.6"></a-entity>
+
+      <a-entity
+        light="type: directional; intensity: 0.8"
+        position="0 6 4">
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
